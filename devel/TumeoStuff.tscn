@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node
+
+
+func _ready():
+	if OS.get_environment('computername') == 'TUMEO-PC':
+		OS.window_size = Vector2(1920, 1080)/3
+		OS.window_position = Vector2(60, 50)
+"
+
+[node name="TumeoStuff" type="Node" index="0"]
+script = SubResource( 1 )
+

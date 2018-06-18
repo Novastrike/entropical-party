@@ -1,0 +1,171 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://game/gameplay/PlasticEvents.gd" type="Script" id=1]
+[ext_resource path="res://game/gameplay/PlasticSun.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/snd/voice_clips/suna/you-are-the-hottest-sun-around-here.ogg" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "1"
+length = 10.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlasticSun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -720, 400 ), Vector2( 2290, 430 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("PlasticSun/Voice")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 4.5 )
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "2"
+length = 10.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlasticSun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2290, 430 ), Vector2( -240, 1070 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("PlasticSun/Voice")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 4.2 )
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "3"
+length = 10.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlasticSun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1220, 1460 ), Vector2( -510, -760 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("PlasticSun/Voice")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 3.5 )
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "4"
+length = 10.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("PlasticSun:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 690, -390 ), Vector2( 2070, 660 ) ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("PlasticSun/Voice")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 4.6 )
+}
+
+[node name="PlasticEvents" type="Node2D" index="0"]
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PlasticSun" parent="." index="0" instance=ExtResource( 2 )]
+position = Vector2( 1725, 397.5 )
+_sections_unfolded = [ "Transform" ]
+can_move = false
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="PlasticSun" index="8"]
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 0.4
+anims/1 = SubResource( 1 )
+anims/2 = SubResource( 2 )
+anims/3 = SubResource( 3 )
+anims/4 = SubResource( 4 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+

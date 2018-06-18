@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game/gameplay/UFO.gd" type="Script" id=1]
+[ext_resource path="res://assets/tex/saucer.png" type="Texture" id=2]
+[ext_resource path="res://game/gameplay/Explosion.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/snd/catch_food.ogg" type="AudioStream" id=4]
+[ext_resource path="res://game/ui/ActionLines.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 68.2339, 14.5889 )
+
+[node name="UFO" type="KinematicBody2D" index="0"]
+input_pickable = false
+collision_layer = 2
+collision_mask = 2
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+max_speed = 400.0
+acceleration = 12.0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( -1.00003, -83.84, -40.7101, -79.3275, -74.4703, -68.3496, -102.08, -51.35, -117.423, -32.3975, -126.448, -13.445, -123.74, 3.70248, -107.495, 24.46, -91.25, 36.1925, -80.42, 56.0475, -74.1025, 69.585, -98.9288, 97.1712, -73.9016, 111.391, -51.54, 79.5125, 0.04245, 88.0704, 55.2161, 80.1072, 75.6928, 110.822, 98.4449, 94.3272, 73.0049, 72.2925, 87.4449, 43.4125, 109.105, 27.1675, 125.747, -1.23117, 124.041, -21.1392, 115.422, -41.4225, 91.055, -62.18, 50.4424, -78.425 )
+
+[node name="Explosion" parent="." index="2" instance=ExtResource( 3 )]
+
+[node name="HitBox" type="Area2D" parent="." index="3"]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="HitBox" index="0"]
+build_mode = 0
+polygon = PoolVector2Array( -0.994934, -48.7945, -33.3267, -44.0046, -60.8686, -32.6286, -72.8434, -19.4564, -75.2383, 1.49939, -65.6585, 14.0729, -52.4863, 27.2451, -42.9065, 44.0097, -56.0787, 58.9781, -45.3015, 67.9592, -31.5305, 49.9971, -14.1671, 52.392, -3.38986, 52.9908, 18.7634, 50.5958, 33.1331, 47.6021, 44.5091, 66.7617, 56.4838, 54.787, 45.1078, 42.8122, 52.2927, 27.2451, 69.0573, 9.88171, 75.0446, -4.48798, 71.4522, -21.8513, 52.8914, -37.4185, 28.3432, -46.3996 )
+
+[node name="FoodBox" type="Area2D" parent="." index="4"]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_mask = 5
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoodBox" index="0"]
+position = Vector2( 0, 6 )
+shape = SubResource( 1 )
+
+[node name="CatchFood" type="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="ActionLines" parent="." index="6" instance=ExtResource( 5 )]
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_HitBox_area_entered"]
+[connection signal="body_entered" from="FoodBox" to="." method="_on_FoodBox_body_entered"]

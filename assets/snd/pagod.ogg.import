@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pagod.ogg-7f3be898a8c1048455a222b78c017b41.oggstr"
+
+[deps]
+
+source_file="res://assets/snd/pagod.ogg"
+dest_files=[ "res://.import/pagod.ogg-7f3be898a8c1048455a222b78c017b41.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=4.557

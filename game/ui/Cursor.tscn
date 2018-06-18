@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/tex/smoke.png" type="Texture" id=1]
+[ext_resource path="res://game/ui/Cursor.gd" type="Script" id=2]
+
+[sub_resource type="ParticlesMaterial" id=1]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 147.29
+flatness = 0.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 2.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.164126
+scale_random = 0.19
+color = Color( 0.945098, 0.941176, 0.737255, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread" ]
+
+[node name="Cursor" type="Particles2D" index="0"]
+modulate = Color( 1, 1, 1, 0.690196 )
+emitting = true
+amount = 8
+lifetime = 1.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 1 )
+texture = ExtResource( 1 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+script = ExtResource( 2 )
+_sections_unfolded = [ "Process Material", "Textures", "Transform", "process_material" ]
+use_global = true
+

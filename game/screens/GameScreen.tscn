@@ -1,0 +1,159 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://game/screens/GameScreen.gd" type="Script" id=1]
+[ext_resource path="res://game/gameplay/SpawnEvents.tscn" type="PackedScene" id=2]
+[ext_resource path="res://game/ui/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game/gameplay/100%Jesus.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/ui/Score.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/thm/Theme.tres" type="Theme" id=6]
+[ext_resource path="res://game/gameplay/UFO.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/gameplay/TheSun.tscn" type="PackedScene" id=8]
+[ext_resource path="res://game/gameplay/PlasticEvents.tscn" type="PackedScene" id=9]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+render_priority = 0
+blend_mode = 1
+light_mode = 0
+
+[sub_resource type="Animation" id=2]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1086.8, -606.32 ), Vector2( 3035.99, 1822.78 ) ]
+}
+
+[node name="GameScreen" type="Node2D" index="0"]
+pause_mode = 2
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+debug_score = 0.0
+
+[node name="SpawnEvents" parent="." index="0" instance=ExtResource( 2 )]
+pause_mode = 1
+_sections_unfolded = [ "Pause" ]
+
+[node name="Background" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="100%Jesus" parent="Background" index="3" instance=ExtResource( 4 )]
+editor/display_folded = true
+material = SubResource( 1 )
+position = Vector2( -1086.8, -606.32 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Background/100%Jesus" index="1"]
+root_node = NodePath("..")
+autoplay = "New Anim"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 0.03
+"anims/New Anim" = SubResource( 2 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Score" parent="." index="2" instance=ExtResource( 5 )]
+margin_left = 987.748
+margin_top = 442.454
+margin_right = 1305.75
+margin_bottom = 589.454
+
+[node name="Lives" type="Label" parent="." index="3"]
+modulate = Color( 0.137255, 0.721569, 0.611765, 0.509804 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 991.668
+margin_top = 560.0
+margin_right = 1341.67
+margin_bottom = 707.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 6 )
+text = "Lives 5"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Theme", "Visibility" ]
+
+[node name="UFO" parent="." index="4" instance=ExtResource( 7 )]
+pause_mode = 1
+position = Vector2( 790.263, 746.34 )
+_sections_unfolded = [ "Collision", "Pause" ]
+
+[node name="TheSun" parent="." index="5" instance=ExtResource( 8 )]
+pause_mode = 1
+position = Vector2( 790, 420 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="PlasticEvents" parent="." index="6" instance=ExtResource( 9 )]
+pause_mode = 1
+_sections_unfolded = [ "Pause" ]
+
+[node name="SpawnArea" type="Node2D" parent="." index="7"]
+pause_mode = 1
+_sections_unfolded = [ "Pause" ]
+
+[node name="Pause" type="ColorRect" parent="." index="8"]
+visible = false
+self_modulate = Color( 0, 0, 0, 0.5 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1600.0
+margin_bottom = 900.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 6 )
+color = Color( 1, 1, 1, 1 )
+_sections_unfolded = [ "Theme", "Visibility" ]
+
+[node name="Text" type="Label" parent="Pause" index="0"]
+self_modulate = Color( 1, 1, 1, 0.682353 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1600.0
+margin_bottom = 280.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Paused"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Visibility" ]
+
+[connection signal="score_update" from="." to="SpawnEvents" method="_on_score_update"]
+[connection signal="plastic_sun" from="SpawnEvents" to="." method="_on_SpawnEvents_plastic_sun"]
+[connection signal="spawn_at" from="SpawnEvents" to="." method="_on_SpawnEvents_spawn_at"]
+[connection signal="add_score" from="UFO" to="." method="_on_UFO_add_score"]
+[connection signal="dead" from="UFO" to="." method="_on_UFO_dead"]
+[connection signal="explode" from="UFO" to="." method="_on_UFO_explode"]

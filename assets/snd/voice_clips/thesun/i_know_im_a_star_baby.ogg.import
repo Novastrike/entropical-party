@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/i_know_im_a_star_baby.ogg-9936bf04c365a461350c10380436ac64.oggstr"
+
+[deps]
+
+source_file="res://assets/snd/voice_clips/thesun/i_know_im_a_star_baby.ogg"
+dest_files=[ "res://.import/i_know_im_a_star_baby.ogg-9936bf04c365a461350c10380436ac64.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

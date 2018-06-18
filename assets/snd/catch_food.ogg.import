@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/catch_food.ogg-93ae38318a0ea64e7806b553bd3f70c5.oggstr"
+
+[deps]
+
+source_file="res://assets/snd/catch_food.ogg"
+dest_files=[ "res://.import/catch_food.ogg-93ae38318a0ea64e7806b553bd3f70c5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,246 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/snd/voice_clips/thesun/not_feeling_so_hot.ogg" type="AudioStream" id=1]
+[ext_resource path="res://game/gameplay/NotBubsy.gd" type="Script" id=2]
+[ext_resource path="res://assets/snd/voice_clips/thesun/alright.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/snd/voice_clips/thesun/extra_juicy.ogg" type="AudioStream" id=4]
+[ext_resource path="res://assets/snd/voice_clips/thesun/hmm_i_like_it.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/snd/voice_clips/thesun/hmm_juicy.ogg" type="AudioStream" id=6]
+[ext_resource path="res://assets/snd/voice_clips/thesun/i_know_im_a_star_baby.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/snd/voice_clips/thesun/now_thats_what_i_call_toasty.ogg" type="AudioStream" id=8]
+[ext_resource path="res://assets/snd/voice_clips/thesun/oh_yeah.ogg" type="AudioStream" id=9]
+[ext_resource path="res://assets/snd/voice_clips/thesun/toasty.ogg" type="AudioStream" id=10]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "alright"
+length = 1.9
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "extra-juicy"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 4 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "hmm-i-like-it"
+length = 2.3
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 5 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "hmm-juicy"
+length = 2.6
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 6 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "i-know-im-a-star-baby"
+length = 2.3
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=7]
+
+resource_name = "now-thats-what-i-call-toasty"
+length = 2.6
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 8 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=8]
+
+resource_name = "oh-yeah"
+length = 1.9
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 9 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "toasty"
+length = 1.5
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 10 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[sub_resource type="Animation" id=10]
+
+resource_name = "not-feeling-so-hot"
+length = 1.9
+loop = false
+step = 0.1
+tracks/0/type = "audio"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 1 )
+} ],
+"times": PoolRealArray( 0.1 )
+}
+
+[node name="NotBubsy" type="AudioStreamPlayer2D" index="0"]
+stream = ExtResource( 1 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+script = ExtResource( 2 )
+cooldown = 15.0
+
+[node name="Lines" type="AnimationPlayer" parent="." index="0"]
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/alright = SubResource( 1 )
+anims/extra-juicy = SubResource( 2 )
+anims/hmm-i-like-it = SubResource( 3 )
+anims/hmm-juicy = SubResource( 4 )
+anims/i-know-im-a-star-baby = SubResource( 5 )
+anims/now-thats-what-i-call-toasty = SubResource( 7 )
+anims/oh-yeah = SubResource( 8 )
+anims/toasty = SubResource( 9 )
+blend_times = [  ]
+
+[node name="OhNo" type="AnimationPlayer" parent="." index="1"]
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/not-feeling-so-hot = SubResource( 10 )
+blend_times = [  ]
+
+[node name="Timer" type="Timer" parent="." index="2"]
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

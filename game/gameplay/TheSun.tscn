@@ -1,0 +1,272 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://game/gameplay/TheSun.gd" type="Script" id=1]
+[ext_resource path="res://assets/tex/fire_particle_1.png" type="Texture" id=2]
+[ext_resource path="res://assets/tex/fire_particle_2.png" type="Texture" id=3]
+[ext_resource path="res://assets/tex/sun_sheet.png" type="Texture" id=4]
+[ext_resource path="res://assets/snd/burning.ogg" type="AudioStream" id=5]
+[ext_resource path="res://game/gameplay/NotBubsy.tscn" type="PackedScene" id=6]
+
+[sub_resource type="ParticlesMaterial" id=1]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 59.76
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( 0, -70, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = -85.7
+angular_velocity_random = 0.76
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = -205.7
+angle_random = 0.31
+scale = 0.4
+scale_random = 0.6
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.3
+hue_variation_random = 0.5
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Radial Accel", "Scale", "Spread", "Tangential Accel", "Trail" ]
+
+[sub_resource type="ParticlesMaterial" id=2]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 66.74
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 105.24
+flatness = 0.0
+gravity = Vector3( 0, -70, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 180.0
+angle_random = 0.3
+scale = 0.4
+scale_random = 0.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.3
+hue_variation_random = 0.53
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Emission Shape", "Gravity", "Hue Variation", "Scale" ]
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 450.111
+
+[sub_resource type="CircleShape2D" id=4]
+
+custom_solver_bias = 0.0
+radius = 200.0
+
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 51.3329
+
+[sub_resource type="Animation" id=6]
+
+length = 1.0
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.55, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 4, 0, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Particles/Particles2D:process_material:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles/Particles2D2:process_material:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.4 ]
+}
+
+[node name="TheSun" type="Area2D" index="0" groups=[
+"sun",
+]]
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+can_move = true
+max_speed = 300.0
+acceleration = 12.0
+warm_radius = 200.0
+
+[node name="Particles" type="Node2D" parent="." index="0"]
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="Particles2D" type="Particles2D" parent="Particles" index="0"]
+emitting = true
+amount = 30
+lifetime = 0.549067
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.45
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 1 )
+texture = ExtResource( 2 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Time", "process_material" ]
+
+[node name="Particles2D2" type="Particles2D" parent="Particles" index="1"]
+emitting = true
+amount = 50
+lifetime = 0.51579
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 2 )
+texture = ExtResource( 3 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Time", "process_material" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 4 )
+hframes = 5
+frame = 4
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="Gravity" type="Area2D" parent="." index="2"]
+visible = false
+input_pickable = true
+space_override = 4
+gravity_point = true
+gravity_vec = Vector2( 2, 0 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_mask = 5
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gravity" index="0"]
+shape = SubResource( 3 )
+
+[node name="Warm" type="Area2D" parent="." index="3" groups=[
+"warm",
+]]
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Warm" index="0"]
+shape = SubResource( 4 )
+_sections_unfolded = [ "shape" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="4"]
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+root_node = NodePath("..")
+autoplay = "0idle"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/0idle = SubResource( 6 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="6"]
+stream = ExtResource( 5 )
+volume_db = -3.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="NotBubsy" parent="." index="7" instance=ExtResource( 6 )]
+

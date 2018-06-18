@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/frying_loop.ogg-160ce1cd6a8f28231b38f3f874735e35.oggstr"
+
+[deps]
+
+source_file="res://assets/snd/frying_loop.ogg"
+dest_files=[ "res://.import/frying_loop.ogg-160ce1cd6a8f28231b38f3f874735e35.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
