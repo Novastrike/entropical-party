@@ -38,7 +38,7 @@ tracks/0/keys = {
 pause_mode = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
-debug_score = 0.0
+debug_score = 601.0
 
 [node name="SpawnEvents" parent="." index="0" instance=ExtResource( 2 )]
 pause_mode = 1
@@ -104,7 +104,7 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="PlasticEvents" parent="." index="6" instance=ExtResource( 9 )]
 pause_mode = 1
-_sections_unfolded = [ "Pause" ]
+_sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="SpawnArea" type="Node2D" parent="." index="7"]
 pause_mode = 1

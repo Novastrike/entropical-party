@@ -42,13 +42,14 @@ func process_move(delta):
 		position.y = clamp(position.y, LIMITS.position.y, LIMITS.size.y)
 
 func explode():
-	emit_signal('dead')
-	dead = true
-	can_move = false
-	$Sprite.hide()
-	$ActionLines.play()
-	yield($Explosion.explode(), 'completed')
-	emit_signal('explode')
+	if not dead:
+		emit_signal('dead')
+		dead = true
+		can_move = false
+		$Sprite.hide()
+		$ActionLines.play()
+		yield($Explosion.explode(), 'completed')
+		emit_signal('explode')
 
 func food_catch(food):
 	$CatchFood.play()

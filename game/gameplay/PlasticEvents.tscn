@@ -36,6 +36,18 @@ tracks/1/keys = {
 } ],
 "times": PoolRealArray( 4.5 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlasticSun:collisions")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 8.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=2]
 
@@ -68,6 +80,18 @@ tracks/1/keys = {
 "stream": ExtResource( 3 )
 } ],
 "times": PoolRealArray( 4.2 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlasticSun:collisions")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 9.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -102,6 +126,18 @@ tracks/1/keys = {
 } ],
 "times": PoolRealArray( 3.5 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlasticSun:collisions")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 2, 7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -135,13 +171,25 @@ tracks/1/keys = {
 } ],
 "times": PoolRealArray( 4.6 )
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("PlasticSun:collisions")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3, 7.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [node name="PlasticEvents" type="Node2D" index="0"]
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PlasticSun" parent="." index="0" instance=ExtResource( 2 )]
-position = Vector2( 1725, 397.5 )
+position = Vector2( -720, 400 )
 _sections_unfolded = [ "Transform" ]
 can_move = false
 

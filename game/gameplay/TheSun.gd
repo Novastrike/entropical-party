@@ -5,6 +5,8 @@ export(bool) var can_move = true
 export(float) var max_speed = 300.0
 export(float) var acceleration = 12.0
 export(float) var warm_radius = 400
+export(bool) var collisions = true setget set_collisions
+
 
 const NO_MOVE = Vector2()
 const LIMITS = Rect2(0, 0, 1600, 900)
@@ -42,6 +44,16 @@ func _process_move(delta):
 func _draw():
 	if OS.is_debug_build():
 		draw_circle(Vector2(), warm_radius, Color(1, 0, 0, 0.1))
+
+func set_collisions(b):
+	collisions = b
+	call_deferred('update_collisions')
+
+func update_collisions():
+	for area in [self, $Gravity, $Warm]:
+		area.monitoring = collisions
+		area.monitorable = collisions
+	$Gravity.gravity_point = collisions
 
 func random_line():
 	$NotBubsy.random_line()

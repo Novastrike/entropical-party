@@ -6,7 +6,7 @@ signal plastic_sun
 const MEAT = preload('res://game/gameplay/foods/Meat.tscn')
 const GELATO = preload('res://game/gameplay/foods/Gelato.tscn')
 const FOODS = {'meat': MEAT, 'gelato': GELATO}
-const RANGE = [0, 1600]
+const RANGE = [20, 1600-20]
 
 
 const Events = {

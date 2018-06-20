@@ -159,6 +159,7 @@ can_move = true
 max_speed = 300.0
 acceleration = 12.0
 warm_radius = 200.0
+collisions = true
 
 [node name="Particles" type="Node2D" parent="." index="0"]
 _sections_unfolded = [ "Material", "Visibility" ]
